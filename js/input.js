@@ -26,8 +26,8 @@
 		
 		acf.add_action('ready append', function( $el ){
 			
-			// search $el for fields of type 'vcard'
-			acf.get_fields({ type : 'vcard'}, $el).each(function(){
+			// search $el for fields of type 'hcard'
+			acf.get_fields({ type : 'hcard'}, $el).each(function(){
 				
 				initialize_field( $(this) );
 				
@@ -56,7 +56,7 @@
 		
 		$(document).on('acf/setup_fields', function(e, postbox){
 			
-			$(postbox).find('.field[data-field_type="vcard"]').each(function(){
+			$(postbox).find('.field[data-field_type="hcard"]').each(function(){
 				
 				initialize_field( $(this) );
 				

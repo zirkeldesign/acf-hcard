@@ -1,11 +1,11 @@
 <?php
 /**
- * acf-vcard-v4.php.
+ * acf-hcard-v4.php.
  *
  * @author	Daniel Sturm
  * @build	date
  */
-class acf_field_vcard extends acf_field
+class acf_field_hcard extends acf_field
 {
     // vars
     public $settings, // will hold info such as dir / path
@@ -24,8 +24,8 @@ class acf_field_vcard extends acf_field
     public function __construct()
     {
         // vars
-        $this->name = 'vcard';
-        $this->label = __('vCard');
+        $this->name = 'hcard';
+        $this->label = __('hCard');
         $this->category = __('Basic', 'acf'); // Basic, Content, Choice, etc
         $this->defaults = array(
             // add default here to merge into your field.
@@ -147,17 +147,17 @@ class acf_field_vcard extends acf_field
 
 
         // register ACF scripts
-        wp_register_script('acf-input-vcard', $this->settings['dir'].'js/input.js', array('acf-input'), $this->settings['version']);
-        wp_register_style('acf-input-vcard', $this->settings['dir'].'css/input.css', array('acf-input'), $this->settings['version']);
+        wp_register_script('acf-input-hcard', $this->settings['dir'].'js/input.js', array('acf-input'), $this->settings['version']);
+        wp_register_style('acf-input-hcard', $this->settings['dir'].'css/input.css', array('acf-input'), $this->settings['version']);
 
         // scripts
         wp_enqueue_script(array(
-            'acf-input-vcard',
+            'acf-input-hcard',
         ));
 
         // styles
         wp_enqueue_style(array(
-            'acf-input-vcard',
+            'acf-input-hcard',
         ));
     }
 
@@ -359,6 +359,6 @@ class acf_field_vcard extends acf_field
 }
 
 // create field
-new acf_field_vcard();
+new acf_field_hcard();
 
-/* end of file acf-vcard-v4.php */
+/* end of file acf-hcard-v4.php */
